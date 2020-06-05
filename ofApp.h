@@ -49,11 +49,11 @@ public:
 		
 		/********************
 		********************/
-		float theta_step = theta_w / (Resolution - 1);
+		float theta_step = theta_w / (Resolution);
 		float theta = theta_from;
-		for(int i = 0; i < Resolution; i++, theta += theta_step){
-			VboVerts[2 * i    ].set( r0 * cos(DegToRad(theta)), r0 * sin(DegToRad(theta)) );
-			VboVerts[2 * i + 1].set( r1 * cos(DegToRad(theta)), r1 * sin(DegToRad(theta)) );
+		for(int i = 0; i <= Resolution; i++, theta += theta_step){
+			VboVerts[2 * i    ].set( r1 * cos(DegToRad(theta)), r1 * sin(DegToRad(theta)) );
+			VboVerts[2 * i + 1].set( r0 * cos(DegToRad(theta)), r0 * sin(DegToRad(theta)) );
 		}
 		
 		/********************
